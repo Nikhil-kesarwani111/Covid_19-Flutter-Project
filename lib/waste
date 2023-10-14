@@ -1,0 +1,58 @@
+   child:FutureBuilder(
+                  future:statesServices.countriesList(),
+                  builder: (context,AsyncSnapshot<List<dynamic>> snapshot ){
+
+                  if(!snapshot.hasData){
+                    return ListView.builder(
+                        itemCount:4,
+                        itemBuilder:(context,index){
+                          return Shimmer.fromColors(
+                            baseColor:Colors.blueAccent,
+                              highlightColor: Colors.lightGreen,
+                              child: ListTile(
+                                title: Container(height: 10,width:89,color: Colors.white,),
+                                subtitle: Container(height: 10,width:89,color: Colors.white,),
+
+                                leading:Container(height: 50,width:50,color: Colors.white,),
+                              ),
+                              );
+                        });
+                  }else{
+                      return ListView.builder(
+                          itemCount:snapshot.data!.length,
+                          itemBuilder:(context,index){
+                            String name =snapshot.data![index]['country'];
+                            if(searchController.text.isEmpty){
+                              return ListTile(
+                                title: Text(snapshot.data![index]['country'].toString(),
+                                  style:TextStyle(color: Colors.grey.shade400) ,),
+                                subtitle: Text(snapshot.data![index]['cases'].toString(),
+                                  style:TextStyle(color: Colors.grey.shade400) ,),
+                                leading: Image(
+                                  width: 50,
+                                  height: 50,
+                                  image: NetworkImage(
+                                      snapshot.data![index]['countryInfo']['flag']
+                                  ),),
+                              );
+                            }else if(name.toLowerCase().contains(searchController.text.toLowerCase())){
+                              return ListTile(
+                                title: Text(snapshot.data![index]['country'].toString(),
+                                  style:TextStyle(color: Colors.grey.shade400) ,),
+                                subtitle: Text(snapshot.data![index]['cases'].toString(),
+                                  style:TextStyle(color: Colors.grey.shade400) ,),
+                                leading: Image(
+                                  width: 50,
+                                  height: 50,
+                                  image: NetworkImage(
+                                      snapshot.data![index]['countryInfo']['flag']
+                                  ),),
+                              );
+                            }else{
+                              return Container();
+                            }
+                          });
+                      }
+
+                  }
+    ),
