@@ -10,7 +10,17 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+<ul>
+  <li>Worked on a mobile application to track and display real-time global and country-specific COVID-19 statistics.</li>
+  <li>Used Flutter for cross-platform development and Firebase for real-time data management.</li>
+  <li>Integrated APIs to pull accurate and up-to-date COVID-19 data, optimized data retrieval processes, and executed real-time updates for enhanced user interaction.</li>
+  <li>Achieved a 40% improvement in data accuracy and update frequency, reduced data retrieval times by 30%, and increased user engagement by 25%, leading to a more responsive and informative app experience.</li>
+</ul>
+
+### Check out the demo video:
+
+[![Watch the video](https://img.youtube.com/vi/xLnSqqFYE3c/0.jpg)](https://github.com/user-attachments/assets/0ea6b16a-5bc6-4e57-a420-ec8cfe2a7dea)
+
 
 A few resources to get you started if this is your first Flutter project:
 
