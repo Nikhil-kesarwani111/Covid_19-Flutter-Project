@@ -1,4 +1,4 @@
-# covd_19
+# COVID-19 Cases Tracker App: Real-time Data Management and API Integration
 
 A new Flutter project.
 
